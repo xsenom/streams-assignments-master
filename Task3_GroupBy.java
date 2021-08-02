@@ -117,9 +117,9 @@ public class Task3_GroupBy {
 
         return  employees.stream ()
                 .collect (Collectors.groupingBy
-                        (Employee::getName,Collectors.mapping (Employee::toString)));
-    }
+                        (Employee::getCompany,Collectors.mapping (Employee::getName,Collectors.toList())));
 
+    }
 
     public static class Employee {
         private String name;
