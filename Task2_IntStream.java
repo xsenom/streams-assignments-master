@@ -29,8 +29,7 @@ public class Task2_IntStream {
      */
     public static Integer multiply(List<Integer> linkedListOfNumbers) {
 
-        return linkedListOfNumbers.stream().filter ()
-                .reduce (1,Math::multiplyExact);
+        return linkedListOfNumbers.stream().reduce((s1, s2) -> s1 * s2).filter(x ->x <=100||x.equals(" ")).orElse(-1);
 
     }
 
